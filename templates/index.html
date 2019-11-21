@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Posty</title>
+</head>
+<body>
+    <header>
+        <div><img src="zeek zone logo.jpg" height="50px" alt="logo"></div> 
+        <div>Posty</div>
+        <div><a href="#">New post</a></div>
+    </header>
+    <main>
+        {% for post in posts %}
+        <div>
+            <div>
+                <img src="{{post.photo_url}}" height="80px" alt="profile-img">
+                <span>{{post.name}}</span>
+            </div>
+            <div>
+                <p>{{post.body}}</p>
+            </div>
+            <div>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </main>
+    <footer></footer>
+</body>
+</html>
