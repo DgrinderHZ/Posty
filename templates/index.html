@@ -10,7 +10,7 @@
     <header>
         <div><img src="zeek zone logo.jpg" height="50px" alt="logo"></div> 
         <div>Posty</div>
-        <div><a href="#">New post</a></div>
+        <div><a href="{{ url_for('add') }}">New post</a></div>
     </header>
     <main>
         {% for post in posts %}
