@@ -22,6 +22,8 @@ post_store.add(dummy_posts[1])
 @app.route("/index")
 def home():
     return render_template("index.html", posts = post_store.get_all())
+
+########### Add new post section
 @app.route("/posts/add", methods= ["GET", "POST"])
 def add():
     if request.method == "POST":
@@ -34,4 +36,10 @@ def add():
         return redirect(url_for("home"))
     elif request.method == "GET":
         return render_template("post-add.html")
+
+########### Delete a post section
+@app.route('/posts/delete/<int:id>')
+def post_delete(id):
+    post_store.delete(id)
+    return redirect(url_for("home"))
 app.run()

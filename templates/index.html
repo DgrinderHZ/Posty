@@ -24,7 +24,7 @@
             </div>
             <div>
                 <a href="#">Edit</a> |
-                <a href="#">Delete</a>
+                <a href="{{ url_for('post_delete', id=post.id) }}">Delete</a>
             </div>
         </div>
         {% endfor %}
