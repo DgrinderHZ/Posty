@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update post | Posty</title>
+</head>
+<body>
+    <form action="{{ url_for('post_update', id=post.id) }}" method="POST">
+        <div><input type="text" name="photo_url" value="{{ post.photo_url }}" /></div>
+        <div><input type="text" name="name" value="{{ post.name }}" /></div>
+        <div><textarea name="body" cols="30" rows="10" value="{{ post.body }}"></textarea></div>
+        <div><input type="submit" value="Create"></div>
+    </form>
+</body>
+</html>
