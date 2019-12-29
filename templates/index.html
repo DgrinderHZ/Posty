@@ -16,19 +16,21 @@
     <main>
 
         {% for post in posts %}
-        <div>
+        <article>
             <div>
-                <img src="{{post.photo_url}}" height="80px" alt="profile-img">
-                <span>{{post.name}}</span>
+                <div>
+                    <img src="{{post.photo_url}}" height="80px" alt="profile-img">
+                    <span>{{post.name}}</span>
+                </div>
+                <div>
+                    <p>{{post.body}}</p>
+                </div>
+                <div class="btn-section">
+                    <a href="{{ url_for('post_update', id=post.id) }}">Edit</a> |
+                    <a href="{{ url_for('post_delete', id=post.id) }}">Delete</a>
+                </div>
             </div>
-            <div>
-                <p>{{post.body}}</p>
-            </div>
-            <div class="btn-section">
-                <a href="{{ url_for('post_update', id=post.id) }}">Edit</a> |
-                <a href="{{ url_for('post_delete', id=post.id) }}">Delete</a>
-            </div>
-        </div>
+        </article>
         {% endfor %}
 
     </main>
